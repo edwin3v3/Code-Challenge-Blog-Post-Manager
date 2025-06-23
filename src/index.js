@@ -12,20 +12,81 @@ fetch('http://localhost:3000/posts')
     .then(posts => {
         // assigning of fetrched posts to global array
         allPosts = posts;
-        retrievePosts(posts)}
-    );
-});
+        retrievePosts(posts);
+        fetchOnePost(4);
+    });
+}
+
+);
+
+function loadOutputDiv(post){
+    
+    console.log(post.time_stamp);
+    let dateCreated = formatToCustomDate(post.time_stamp);
+    console.log('date after format '+typeof dateCreated, dateCreated);
+    //console.log('let us see '+fetchOnePost(id));
+    //console.log('id value '+id);
+    //outPutDiv.innerHTML = fetchOnePost(id);
+
+    return `
+
+            <div class="p-3 flex m-1 space-x-1">
+                    
+                <div class="m-1"><img src="${post.image}" alt="" class="object-cover w-[400px]"></div>
+                <div class="p-1">
+                    <span class="inline-block">
+                        <a onclick="" class="cursor-pointer underline text-blue-900">edit</a>
+                        <a onclick="deletePost(${post.id})" class="ml-2 cursor-pointer text-red-800 underline">del</a>
+                    </span>
+                    <h2 class="m-1 block font-medium text-3xl">${post.post_title}</h2>
+                    <span class="block">
+                        <span>${post.author}</span>
+                         <span class="pl-2">${dateCreated}</span>
+                    </span>
+                    <p>${post.post_content}</p>
+
+                    
+                </div>
+
+        </div>
+    `;
+
+}
 
    
 console.log('after fetch');
+
+// to load one post on the outPut Div
+
+function fetchOnePost(id) {
+  const outPutDiv = document.getElementById('outPutDiv');
+
+  fetch(`http://localhost:3000/posts/${id}`, {
+    method: 'GET'
+  })
+    .then(res => {
+      if (!res.ok) {
+        
+        throw new Error('Failed to retrieve post');
+      }
+      return res.json(); 
+    })
+    .then(post => {
+      console.log("Post retrieved:", post);
+      outPutDiv.innerHTML = loadOutputDiv(post); 
+    })
+    .catch(error => {
+      console.error("Error retrieving post:", error.message);
+    });
+}
 
 
 // Create one post item
 function createPostItem(post) {
     
-    console.log(post.time_stamp);
+    //console.log(post.time_stamp);
     let dateCreated = formatToCustomDate(post.time_stamp);
-    console.log('date after format '+typeof dateCreated, dateCreated);
+    //console.log('date after format '+typeof dateCreated, dateCreated);
 
 
     return `
@@ -128,5 +189,8 @@ function deletePost(id) {
     }
 }
 
+
+
 window.deletePost = deletePost;
 window.formatToCustomDate = formatToCustomDate;
+window.fetchOnePost = fetchOnePost;
