@@ -3,6 +3,15 @@ console.log('before fetch');
 // define global array to hold posts
 let allPosts = [];
 
+// open and close Dialogs
+function openDialog() {
+    document.getElementById('outerDialog').classList.remove('hidden');
+}
+
+function closeDialog() {
+    document.getElementById('outerDialog').classList.add('hidden');
+}
+
 // intial fetch declaration once the DOM is fully loaded
 // 
 document.addEventListener("DOMContentLoaded", () => {
@@ -19,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function loadOutputDiv(post){
+    // returns a html string
     
     console.log(post.time_stamp);
     let dateCreated = formatToCustomDate(post.time_stamp);
@@ -34,7 +44,7 @@ function loadOutputDiv(post){
                 <div class="m-1"><img src="${post.image}" alt="" class="object-cover w-[400px]"></div>
                 <div class="p-1">
                     <span class="inline-block" style ="text-align:right;">
-                        <a onclick="" class="cursor-pointer underline text-blue-900">edit</a>
+                        <a onclick="openDialog()" class="cursor-pointer underline text-blue-900">edit</a>
                         <a onclick="deletePost(${post.id})" class="ml-2 cursor-pointer text-red-800 underline">del</a>
                     </span>
                     <h2 class="m-1 block font-medium text-3xl">${post.post_title}</h2>
@@ -72,6 +82,7 @@ function fetchOnePost(id) {
     })
     .then(post => {
       console.log("Post retrieved:", post);
+      // calls loadOutputDiv - to populate outPutDiv with content
       outPutDiv.innerHTML = loadOutputDiv(post); 
     })
     .catch(error => {
@@ -93,11 +104,11 @@ function createPostItem(post) {
         <div class="p-3 flex m-1 space-x-1">
                 <div class="m-1"><img src="${post.image}" alt="" class="object-cover w-[150px]"></div>
                 <div class="p-1">
-                    <a onclick="fetchOnePost(${post.id})" class="m-1 inline-block text-[18px] font-medium cursor-pointer">${post.post_title}</a>
+                    <a onclick="fetchOnePost(${post.id})" class="my-2 mx-0.5 inline-block text-[18px] font-medium leading-tight cursor-pointer">${post.post_title}</a>
                     <span class="inline-block"><span>${post.author}</span>
                         <span class="pl-2">${dateCreated}</span></span>
                     <span class="block">
-                        <a onclick="" class="cursor-pointer underline text-blue-900">edit</a>
+                        <a onclick="openDialog()" class="cursor-pointer underline text-blue-900">edit</a>
                         <a onclick="deletePost(${post.id})" class="ml-2 cursor-pointer text-red-800 underline">del</a></span>
                 </div>
 
@@ -137,7 +148,7 @@ function retrievePosts(posts){
 
     postsCount.innerHTML = `<div class="flex justify-between items-center">
                                     <span>${posts.length} Posts</span>
-                                    <button type="button" class="bg-blue-600 text-white m-2 px-3 py-1 rounded text-sm">
+                                    <button type="button" onclick="openDialog()" class="bg-blue-600 text-white m-2 px-3 py-1 rounded text-sm">
                                     Create Post
                                     </button>
                                 </div>`;
@@ -189,7 +200,9 @@ function deletePost(id) {
 }
 
 
-
+// make onclick functions global even on the html side
 window.deletePost = deletePost;
 window.formatToCustomDate = formatToCustomDate;
 window.fetchOnePost = fetchOnePost;
+window.openDialog = openDialog;
+window.closeDialog = closeDialog;
