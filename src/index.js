@@ -22,23 +22,44 @@ console.log('after fetch');
 
 // Create one post item
 function createPostItem(post) {
- 
+    
+    console.log(post.time_stamp);
+    let dateCreated = formatToCustomDate(post.time_stamp);
+    console.log('date after format '+typeof dateCreated, dateCreated);
 
-  return `
+
+    return `
 
         <div class="p-3 flex m-1 space-x-1">
                 <div class="m-1"><img src="${post.image}" alt="" class="object-cover w-[150px]"></div>
                 <div class="p-1">
                     <a href="" class="m-1 inline-block">${post.post_title}</a>
                     <span class="inline-block"><span>${post.author}</span>
-                        <span class="pl-2">${post.time_stamp}</span></span>
+                        <span class="pl-2">${dateCreated}</span></span>
                     <span class="block">
-                        <a onclick="" class="cursor-pointer">edit</a>
-                        <a onclick="deletePost(${post.id})" class="ml-2 cursor-pointer">del</a></span>
+                        <a onclick="" class="cursor-pointer underline text-blue-900">edit</a>
+                        <a onclick="deletePost(${post.id})" class="ml-2 cursor-pointer text-red-800 underline">del</a></span>
                 </div>
 
         </div>
     `;
+}
+
+// generate the date to format 2025-jun-23
+
+function formatToCustomDate(timestamp) {
+
+  const date = new Date(Number(timestamp)); // Number() function to coerce the given timestamp into an actual number from string
+
+  const year = date.getFullYear();
+
+  const day = String(date.getDate());
+
+  // Month names in lowercase 3-letter format
+  const shortMonths = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
+  const month = shortMonths[date.getMonth()];
+
+  return `${year}-${month}-${day}`;
 }
 
 // function to retrieve all blog post titles - and count how many they are...
@@ -108,3 +129,4 @@ function deletePost(id) {
 }
 
 window.deletePost = deletePost;
+window.formatToCustomDate = formatToCustomDate;
