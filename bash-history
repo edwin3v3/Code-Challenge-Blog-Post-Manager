@@ -1,0 +1,495 @@
+cat ~/.bash_history
+`
+
+~
+
+wsl -status
+;
+home
+exit
+exit;
+
+clear
+sudo apt update
+clear
+git --status
+git -v
+sudo apt install git
+clear
+git config --global color.ui true
+git config --global user.name 'Edwin Mwaniki'
+git config --global user.email edwin.mwaniki@student.moringaschool.com
+git config --global init.defaultBranch main
+ssh-keygen
+ls
+cat ~/.ssh/id_rsa.pub | clip.exe
+cat ~/.ssh/id_ed25519.pub | clip.exe
+nvm --version
+clear
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+nvm -v
+nvm --version
+nvm
+nvm list
+nvm install node
+clear
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+mkdir moringa
+ls
+rm morings
+rm -r morings
+ls
+cd moringa
+mkdir tailwind_project
+cd tailwind_project
+touch index.html
+code index.html
+npm install tailwindcss @tailwindcss/cli
+npx @tailwindcss/cli -i ./input.css -o ./output.css --watch
+code
+npx @tailwindcss/cli -i ./input.css -o ./output.css --watch
+git status
+cd..
+cd ..
+git status
+cd tailwind_project/
+git init
+git status
+git add .
+git status
+git commit -m "Initial Commit"
+clear
+git status
+git remote
+git remote -v
+git remote add origin https://github.com/edwin3v3/tailwindproject.git
+git branch -M main
+git push -u origin main
+git remote remove origin
+git remote add origin git@github.com:edwin3v3/tailwindproject.git
+git branch -M main
+git push -u origin main
+git status
+ls
+cd moringa
+ls
+exit
+code
+cd wsl
+ls
+cd moringa
+cd tailwind_project/
+git status
+git remote add origin git@github.com:edwin3v3/PizzaPlanet.git
+git branch -M main
+git push -u origin main
+exit
+clear
+cd moringa
+ls
+mkdir edwinsite
+cd edwinsite
+touch index.html input.css output.css
+ls
+code .
+git status
+git init
+git add .
+git add README.md
+echo "#edwinsite" >> README.md
+git add README.md
+git commit -m "first commit"
+git bracnch -M main
+git remote add origin git@github.com:edwin3v3/edwinsite.git
+git branch -M main
+git push -u origin main
+touch .gitignore
+ls
+npm init
+npm install tailwindcss @tailwindcss/cli
+npx @tailwindcss/cli -i ./input.css -o ./output.css --watch
+npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch
+npx @tailwindcss/cli -i ./input.css -o ./output.css --watch
+git status
+git add .
+git commit -m "Add Home Page main section" -m "Created the navigation, added key information, added background"
+git push -u origin main
+npx @tailwindcss/cli -i ./input.css -o ./output.css --watch
+git status
+git add .
+git commit -m "Adjusted background profile picture"
+git status
+git push -u origin main
+git status
+git add .
+npx @tailwindcss/cli -i ./input.css -o ./output.css --watch
+git status
+git add .
+git commit -m "Fixed the Navigation to Top Center"
+git push -u origin main
+git revert f5770a4
+git status
+git revert 900982b
+git status
+git push -u origin main
+exit
+npx @tailwindcss/cli -i ./input.css -o ./output.css --watch
+cd moringa
+cd edwinsite
+ls
+npx @tailwindcss/cli -i ./input.css -o ./output.css --watch
+git revert --help
+git reset --help
+git log --oneline --branches --remotes
+git reset e26dbfc
+git push -u origin main
+git remote -v
+git remote --help
+git checkout --help
+git log --oneline --branches --remotes
+git branch --help
+git branch --list
+git switch -c remola origin/main
+git branch --list
+git status
+git add .
+git commit -m "Added Contact Section, changed fonts"
+git switch -c remola origin/main
+git log --oneline --branches --remotes
+git branch --list
+git switch --orphan remoxx
+git branch --list
+git switch remola
+git branch --list
+git revert e26dbfc
+git revert 3ff47e1
+git log --oneline --branches --remotes
+git branch --list
+git switch main
+git remote add origin git@github.com:edwin3v3/home1.git
+git branch -M main
+git remote add origin git@github.com:edwin3v3/home1.git
+git branch -M main1
+git push -u origin main1
+git remote add origin git@github.com:edwin3v3/home1.git
+git branch -M main
+git push -u origin main
+clear
+git branch --list
+git status
+git log --oneline --branches --remotes
+git log --oneline --branches
+git log main --oneline
+git branch --list
+git remote add origin git@github.com:edwin3v3/home.git
+git branch -M main
+git push -u origin main
+git remote add origin git@github.com:edwin3v3/homemax.git
+git branch -M main
+git remote add origin1 git@github.com:edwin3v3/homemax.git
+git push -u origin1 main
+cd ..
+mkdir jvscript
+cd jvscript
+touch index.html index.js
+code
+ls
+code .
+cd ..
+cd edwinsite
+code .
+exit
+cd morin
+cd moringa/
+ls
+mkdir jsclass
+cd jsclass
+git status
+mkdir varLab1
+cd varLab1/
+git init
+git clone git@github.com:edwin3v3/phase-1-javascript-variables-lab.git
+ls
+cd phase-1-javascript-variables-lab/
+git status
+cd ..
+rm -rv phase-1-javascript-variables-lab/
+cd ..
+rm -rv varLab1
+ls
+git clone git@github.com:edwin3v3/phase-1-javascript-variables-lab.git
+cd phase-1-javascript-variables-lab/
+code .
+npm install
+npm test
+clear
+cd..
+cd ..
+mkdir classMay06
+cd classMay06/
+touch index.js
+code .
+cd..
+cd ..
+rm --help
+mv classMay06 classwork
+cd classwork
+code .
+clear
+exit
+ls
+cd moringa
+ls
+mkdir code-challenge-1
+cd code-challenge-1/
+git status
+git init
+git clone git@github.com:edwin3v3/Code-Challenge-1.git
+ls
+cd ..
+rm -rv code-challenge-1/
+ls
+git clone git@github.com:edwin3v3/Code-Challenge-1.git
+ls
+cd Code-Challenge-1/
+ls
+code .
+git status
+git add .
+git commit -m "moved folder mobileMoneyEstimator root folder"
+git push -u origin main
+cd..
+cd ..
+ls
+cd jsclass/
+ls
+cd classwork/
+ls
+code .
+cd..
+cd ..
+cd Code-Challenge-1/
+git status
+git init
+git add .
+git commit -m "Completed the ChaiCalculator"
+git push -u origin main
+git log main --oneline
+clear
+ls
+git status
+git committ -m "Modified: README.MD"
+git commit -m "Modified: README.MD"
+git push -u origin main
+git add README.md
+git commit -m "Modified: README.MD"
+git push -u origin main
+git add README.md
+git commit -m "Modified Headers: README.MD"
+git push -u origin main
+git add README.md
+git commit -m "Modified Headers: README.MD"
+git push -u origin main
+git add README.md
+git commit -m "Modified Headers: README.MD"
+git push -u origin main
+git add README.md
+git commit -m "AD: README.MD"
+git add README.md
+git commit -m "ADDED Feature under ChaiCalculator: README.MD"
+git push -u origin main
+git status
+git add bodaFareCalculator/fare.js
+git commit -m "Completed BodaFareCalcutor"
+git add chaiCalculator/chai.js
+git commit -m "Error Checked ChaiCalculator"
+git add index.html
+git commit -m "Added Numbered link to BodaFareCalculator Program"
+git push -u origin main
+git status
+git add mobileMoneyEstimator/fee.js
+git add mobileMoneyEstimator/fee.html
+git commit -m "Pushed MobileMoneyEstimator"
+git push -u origin main
+git add index.html
+git commit -m "Added MobileMoneyEstimator link to index.html"
+git push -u origin main
+code .
+exit
+cd moringa/Code-Challenge-1/
+ls
+code .
+git status
+git add mobileMoneyEstimator/fee.js
+git commit -m "ADDED function calculateFee(i)"
+git push -u origin main
+git add README.md
+git commit -m "Added Directory & File Structure"
+git push -u origin main
+git add README.md
+git commit -m "Formating of file"
+git push -u origin main
+git add README.md
+git commit -m "Formating adding icon"
+git push -u origin main
+git add README.md
+git commit -m "Formating of directory"
+git push -u origin main
+git add README.md
+git commit -m "Formating of directory new line"
+git push -u origin main
+git add README.md
+git commit -m "Formating of directory new line"
+git push -u origin main
+git add README.md
+git commit -m "Formating of directory indenting"
+git push -u origin main
+git add README.md
+git commit -m "Adding Code Block"
+git push -u origin main
+git add README.md
+git commit -m "Formatting add space"
+git push -u origin main
+git add README.md
+git commit -m "Formatting add space line 10"
+git push -u origin main
+git add README.md
+git commit -m "Formatting add space line 11"
+git push -u origin main
+git add README.md
+git commit -m "Formatting add space line 12 & 13"
+git push -u origin main
+git add README.md
+git commit -m "Formatting line 13-22"
+git push -u origin main
+git commit -m "Formatting line 10-22"
+git add README.md
+git commit -m "Formatting line 10-22"
+git push -u origin main
+git add README.md
+git commit -m "Added Author, Added Why section"
+git push -u origin main
+git add README.md
+git commit -m "Added Why section, edited project setup"
+git push -u origin main
+git add ./mobileMoneyEstimator/fee.js
+git commit -m "Edit the comments in code"
+git push -u origin main
+git add ./index.html
+git commit -m "Add Comments line 12"
+git push -u origin main
+git clear
+clear
+git status
+git add ./bodaFareCalculator/fare.html
+git commit -m "Add header content"
+git add ./bodaFareCalculator/fare.js
+git commit -m "Edit the Comments"
+git add ./chaiCalculator/chai.html
+git commit -m "Add header content"
+git add ./chaiCalculator/chai.js
+git commit -m "Edit the Comments"
+git add ./mobileMoneyEstimator/fee.js
+git commit -m "Edit the Comments"
+git status
+git push -u origin main
+git status
+exit
+cd moring
+cd moringa/
+ls
+cd jsclass/
+ls
+cd classwork/
+ls
+code .
+exit
+cd moringa
+ls
+cd jsclass/
+lis
+ls
+cd classwork/
+ls
+touch object.html object.js
+code .
+clear
+cd ..
+cd Code-Challenge-1/
+code .
+cd ..
+cd jsclass/classwork/
+code .
+cd ..
+cd Code-Challenge-1/
+code .
+cd ..
+cd jsclass/classwork/
+code .
+cd..
+cd ..
+ls
+mkdir Code-Challenge-2
+cd Code-Challenge-2
+touch index.html index.js style.css
+code .
+cat ~/.bash_history
+npm init
+npm install tailwindcss @tailwindcss/cli
+git init
+git status
+git add .
+git status
+git commit -m "This is the first commit"
+git remote add origin git@github.com:edwin3v3/Code-Challenge-2.git
+git branch -M main
+git push -u origin main
+cat ~/.bash_history
+npx @tailwindcss/cli -i ./input.css -o ./output.css --watch
+npx @tailwindcss/cli -i ./css/input.css -o ./css/output.css --watch
+cd ..
+cd jsclass/classwork/
+code .
+cd ..
+cd Code-Challenge-2
+npx @tailwindcss/cli -i ./input.css -o ./output.css --watch
+git status
+git add index.js
+git commit -m "Added the printGuest functionality"
+git add index.html
+git commit -m "Added Tailwind Styling"
+git branch -M main
+git push -u origin main
+git status
+git add README.md
+git commit -m "Add screenshot on the README file"
+git add --help
+git add index.html --verbose
+git commit -m "Modified Title of the Guestlist APP"
+git add screenshot-guestlistApp.jpg
+git commit -m "Included screenshot file"
+git add input.css output.css
+git commit -m "Added Tailwind CSS Files"
+git status
+git branch -M main
+git push -u origin main
+json-server db.json
+cd book-shelf-sdf-ft14/
+json-server db.json
+cd src/
+json-server db.json
+cd ..
+npm init
+cd moringa/
+ls
+cd jsc
+cd jsclass/
+ls
+cd classwork/
+code .
+git clone git@github.com:lewys-miugo/npm-project-setup.git
+ls
+git clone git@github.com:dennis-kiboi/book-shelf-sdf-ft14.git
+json-server db.json
+code .
+exit

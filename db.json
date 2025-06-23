@@ -1,0 +1,60 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "post_title": "lobortis vel dapibus at diam nam tristique tortor",
+      "post_content": "Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",
+      "image": "http://dummyimage.com/499x510.png/cc0000/ffffff",
+      "author": "Angelina Pauly",
+      "time_stamp": "1732454915000"
+    },
+    {
+      "id": 2,
+      "post_title": "ut odio cras mi pede malesuada in imperdiet",
+      "post_content": "Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.\n\nPhasellus in felis. Donec semper sapien a libero. Nam dui.",
+      "image": "http://dummyimage.com/458x484.png/5fa2dd/ffffff",
+      "author": "Clementia Hoofe",
+      "time_stamp": "1729990275000"
+    },
+    {
+      "id": 3,
+      "post_title": "sapien cursus vestibulum proin eu",
+      "post_content": "Sed ante. Vivamus tortor. Duis mattis egestas metus.",
+      "image": "http://dummyimage.com/414x463.png/cc0000/ffffff",
+      "author": "Shellie Leaman",
+      "time_stamp": "1739607033000"
+    },
+    {
+      "id": 4,
+      "post_title": "erat id mauris vulputate elementum",
+      "post_content": "Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
+      "image": "http://dummyimage.com/438x484.png/cc0000/ffffff",
+      "author": "Clarey Jagoe",
+      "time_stamp": "1737168642000"
+    },
+    {
+      "id": 5,
+      "post_title": "at nunc commodo placerat praesent blandit",
+      "post_content": "Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.\n\nSed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.\n\nPellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.",
+      "image": "http://dummyimage.com/411x482.png/ff4444/ffffff",
+      "author": "Nichols Matevosian",
+      "time_stamp": "1737108674000"
+    },
+    {
+      "id": 6,
+      "post_title": "amet sem fusce consequat nulla nisl nunc nisl duis bibendum",
+      "post_content": "Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.\n\nNullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",
+      "image": "http://dummyimage.com/453x492.png/ff4444/ffffff",
+      "author": "Sebastian Valenta",
+      "time_stamp": "1746363378000"
+    },
+    {
+      "id": 7,
+      "post_title": "lacinia eget tincidunt eget tempus vel pede morbi",
+      "post_content": "Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
+      "image": "http://dummyimage.com/467x394.png/ff4444/ffffff",
+      "author": "Gennie Novelli",
+      "time_stamp": "1739758082000"
+    }
+  ]
+}
