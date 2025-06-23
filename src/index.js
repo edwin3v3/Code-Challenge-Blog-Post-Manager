@@ -1,23 +1,22 @@
 console.log('before fetch');
 
 // define global array to hold posts
-let allPosts = [ ];
+let allPosts = [];
 
 // intial fetch declaration once the DOM is fully loaded
 // 
 document.addEventListener("DOMContentLoaded", () => {
-//console.log(fetch('http://localhost:3000/posts'));
-fetch('http://localhost:3000/posts')
-    .then(res => res.json())
-    .then(posts => {
-        // assigning of fetrched posts to global array
-        allPosts = posts;
-        retrievePosts(posts);
-        fetchOnePost(4);
-    });
-}
-
-);
+    //console.log(fetch('http://localhost:3000/posts'));
+    fetch('http://localhost:3000/posts')
+        .then(res => res.json())
+        .then(posts => {
+            // assigning of fetrched posts to global array
+            allPosts = posts;
+            retrievePosts(posts);
+            // default load
+            fetchOnePost(4);
+        });
+});
 
 function loadOutputDiv(post){
     
@@ -34,7 +33,7 @@ function loadOutputDiv(post){
                     
                 <div class="m-1"><img src="${post.image}" alt="" class="object-cover w-[400px]"></div>
                 <div class="p-1">
-                    <span class="inline-block">
+                    <span class="inline-block" style ="text-align:right;">
                         <a onclick="" class="cursor-pointer underline text-blue-900">edit</a>
                         <a onclick="deletePost(${post.id})" class="ml-2 cursor-pointer text-red-800 underline">del</a>
                     </span>
@@ -94,7 +93,7 @@ function createPostItem(post) {
         <div class="p-3 flex m-1 space-x-1">
                 <div class="m-1"><img src="${post.image}" alt="" class="object-cover w-[150px]"></div>
                 <div class="p-1">
-                    <a href="" class="m-1 inline-block">${post.post_title}</a>
+                    <a onclick="fetchOnePost(${post.id})" class="m-1 inline-block text-[18px] font-medium cursor-pointer">${post.post_title}</a>
                     <span class="inline-block"><span>${post.author}</span>
                         <span class="pl-2">${dateCreated}</span></span>
                     <span class="block">
