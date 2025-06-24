@@ -62,6 +62,17 @@ function loadOutputDiv(post){
 
 }
 
+// loadDialog()
+
+function loadDialog(){
+
+    return `
+            
+    `;
+
+}
+
+
    
 console.log('after fetch');
 
