@@ -15,13 +15,13 @@
             <h3 class="font-medium text-2xl p-2 px-6">Moden Blog Post Management</h3>
             <div class="text-red-600"> !!! Working links & Buttons: Del, BlogPost Anchor </div>
         </section>
-        <section id="main-body" class="flex h-[83%] space-x-3.5">
-          
+        <section id="main-body" class="flex h-[80%] space-x-3.5">
+
             <!-- Blog Listing Side Bar -->
             <div class="w-2/6 bg-amber-100 h-5/5 rounded-3xl p-4 flex flex-col">
                 <h4 class="font-medium">Blog Posts</h4>
                 <h5 id="postsCount" class="font-light mx-3">
-                    <!-- The number of posts will be dynamically added here --> 
+                    <!-- The number of posts will be dynamically added here -->
                 </h5>
                 <hr class="mx-2 my-1">
                 <!-- Posts listing -->
@@ -52,14 +52,16 @@
             </div>
         </section>
         <div id="outerDialog" class="fixed inset-0 z-40 bg-indigo-950/96 hidden items-center justify-center">
-            <div id ="postDialog" class="bg-amber-100 rounded-4xl text-center shadow-lg max-w-[55%] w-auto pt-6 px-2 pb-1 mt-35 mx-auto" >
+            <div id="postDialog"
+                class="bg-amber-100 rounded-4xl text-center shadow-lg max-w-[55%] w-auto pt-6 px-2 pb-1 mt-35 mx-auto">
                 <div class="flex bg-blue-500 justify-between">
-                    <span>Header of Dialog </span><a onclick="closeDialog()" class="underline cursor-pointer" type="">Close</a>
+                    <span>Header of Dialog </span><a onclick="closeDialog()" class="underline cursor-pointer"
+                        type="">Close</a>
                 </div>
                 <!-- Dialog Content -->
                 <div>
                     <!-- Dialog Content Inside -->
-                     <form action="">
+                    <form action="">
                         <div class="innerDiv">
                             <div class="flex justify-between">
                                 <label for="Title">Post Image</label>
@@ -68,43 +70,51 @@
                             </div>
                             <div class="flex justify-between">
                                 <label for="Title">Post Title</label>
-                                <input placeholder="The Title" name="post-title" id="post-title" class="w-[60%] px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <input placeholder="The Title" name="post-title" id="post-title"
+                                    class="w-[60%] px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
                             </div>
                             <div class="flex justify-between">
                                 <label for="Title">Post Content</label>
-                                <textarea name="post-content" class="px-4 py-2 border w-[60%] border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500" id="post-content" rows="10"></textarea>
-                
+                                <textarea name="post-content"
+                                    class="px-4 py-2 border w-[60%] border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    id="post-content" rows="10"></textarea>
+
                             </div>
                             <div class="flex justify-between">
                                 <label for="Author">Author Full Name</label>
-                                <input type="text" placeholder="FirstName SurName" name="post-author" class="w-[60%] px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" id="post-author">
+                                <input type="text" placeholder="FirstName SurName" name="post-author"
+                                    class="w-[60%] px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    id="post-author">
                             </div>
 
                             <div>
-                                <button type="submit" class="bg-blue-600 text-white m-2 px-3 py-1 rounded text-sm">Submit</button>
+                                <button type="submit"
+                                    class="bg-blue-600 text-white m-2 px-3 py-1 rounded text-sm">Submit</button>
                             </div>
 
                         </div>
-                     </form>
+                    </form>
                 </div>
 
             </div>
         </div>
 
+        <footer class="justify-center flex p-3 relative">
+
+            <span>Copyright &copy; Edwin Mwaniki 2025</span>
+
+        </footer>
+
 
     </div>
 
-    <footer class="justify-center p-5 relative">
 
-        Copyright &copy; Edwin Mwaniki 2025
-        
-    </footer>
 
 
 </body>
 <script type="module" src="./src/index.js"></script>
 <script>
-    
+
 </script>
 
 </html>
