@@ -13,7 +13,7 @@
         <section id="heading" class="mx-auto text-center">
             <h1 class="font-bold text-4xl p-4">Simple Blog Manager</h1>
             <h3 class="font-medium text-2xl p-2 px-6">Moden Blog Post Management</h3>
-            <div class="text-red-600"> !!! Working links & Buttons: Del, BlogPost Anchor </div>
+    
         </section>
         <section id="main-body" class="flex h-[80%] space-x-3.5">
 
@@ -61,12 +61,17 @@
                 <!-- Dialog Content -->
                 <div>
                     <!-- Dialog Content Inside -->
-                    <form action="">
+                    <form id="postForm" onsubmit="addPost">
+
+                        <!-- insert hidden input field to hold the post-id variable -->
+
+                        <input type="hidden" id="post-id" name="post-id">
+
                         <div class="innerDiv">
                             <div class="flex justify-between">
-                                <label for="Title">Post Image</label>
-                                <img src="" class="object-cover w-[400px]" alt="post image">
-                                <a href="" class="underline text-blue-700">change image</a>
+                                <label for="Title">Image URL</label>
+                                 <input placeholder="Image URL" name="post-image" id="post-image"
+                                    class="w-[60%] px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
                             </div>
                             <div class="flex justify-between">
                                 <label for="Title">Post Title</label>
@@ -75,7 +80,7 @@
                             </div>
                             <div class="flex justify-between">
                                 <label for="Title">Post Content</label>
-                                <textarea name="post-content"
+                                <textarea name="post-content" placeholder="ENTER CONTENT HERE"
                                     class="px-4 py-2 border w-[60%] border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
                                     id="post-content" rows="10"></textarea>
 
@@ -88,7 +93,7 @@
                             </div>
 
                             <div>
-                                <button type="submit"
+                                <button type="submit" onclick="closeDialog()"
                                     class="bg-blue-600 text-white m-2 px-3 py-1 rounded text-sm">Submit</button>
                             </div>
 

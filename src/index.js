@@ -10,11 +10,150 @@ function openDialog() {
 
 function closeDialog() {
     document.getElementById('outerDialog').classList.add('hidden');
+    
 }
+
+// function to edit a post
+
+function editPost(id){
+    if(confirm("EDIT: Are you sure?")){
+        console.log('Post to be edited '+id);
+        let post4Edit = allPosts.find(post => post.id === Number(id));
+        console.log('post to be updated ' +post4Edit, post4Edit.id);
+
+        loadEditForm(post4Edit); // function to populate the Edit Form
+    }
+}
+
+// function to populate the Edit Form
+
+function loadEditForm(post) {
+    console.log('why not' +post.id);
+  document.getElementById("post-id").value = post.id;
+  document.getElementById("post-image").value = post.image;
+  document.getElementById("post-title").value = post.post_title;
+  document.getElementById("post-content").value = post.post_content;
+  document.getElementById("post-author").value = post.author;
+
+  // opens dialog with form which is populated as shown above
+
+  openDialog();
+
+ 
+}
+
+// Add post or // Edit Post - Depending on the existence of post-id
+function addPost(event) {
+    event.preventDefault();
+
+    const formData = new FormData(event.target);
+
+    const postId = formData.get("post-id");
+
+    console.log('Are you real '+postId);
+
+    // no longer necessary
+    // // 1. Find highest existing post_id
+    // const maxId = allPosts.length > 0
+    //     ? Math.max(...allPosts.map(post => post.post_id))
+    //     : 0;
+
+    const postData = {
+        //id: maxId + 1, // no longer necessary
+        image: formData.get("post-image"),
+        post_title: formData.get("post-title"),
+        post_content: formData.get("post-content"),
+        author: formData.get("post-author"),
+        time_stamp: Date.now()
+
+    };
+
+    const thisPostItem = allPosts.find(post => post.id === Number(postId));
+    console.log('try post item ' + thisPostItem);
+    console.log('try post item ' + thisPostItem, typeof thisPostItem);
+    if (thisPostItem) {
+        thisPostItem.post_title = postData.post_title;
+        thisPostItem.post_content = postData.post_content;
+        thisPostItem.image = postData.image;
+        thisPostItem.author = postData.author;
+        thisPostItem.time_stamp = postData.time_stamp
+    }
+
+    // const postToBeUpdated = allPosts.find(post => post.id === postId);
+    // console.log('this one '+postToBeUpdated);
+
+    // console.log('Regarding update '+postToBeUpdated, postToBeUpdated.post_title);
+    // if (postToBeUpdated) {
+    //     postToBeUpdated.post_title = postData.post_title;
+    //     postToBeUpdated.post_content = postData.post_content;
+    // }
+    console.log('Should contain post object '+postData.time_stamp);
+    if(postId){
+        // meaning we are dealing with an existing post in the form data.
+        // therefore update
+
+        fetch(`http://localhost:3000/posts/${postId}`,{
+            method: 'PUT',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(postData)
+        })
+        .then(res => res.json())
+        .then(updatedPost => {
+            console.log('Post updated:', updatedPost);
+            retrievePosts(allPosts); // refresh the DOM UI
+            event.target.reset();
+            document.getElementById("post-id").value = "";
+            fetchOnePost(thisPostItem.id);
+
+        });
+    }else{
+        // no existing post-id
+        // therefore adding new post
+        allPosts.push(postData); // add new post object to AllPosts array
+        retrievePosts(allPosts); // refresh DOM UI
+        event.target.reset(); // set form fields to nothing
+
+        // push data to db.json
+        savePost(postData); // External function specifically of pusihing tdat to to json
+
+    }
+
+ 
+    
+}
+
+function savePost(newPost) {
+  fetch('http://localhost:3000/posts', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(newPost) // ✅ send your post object here
+  })
+    .then(res => {
+      if (!res.ok) {
+        throw new Error('Failed to save post');
+      }
+      return res.json(); // ✅ parse the response
+    })
+    .then(savedPost => {
+      console.log("Post saved:", savedPost);
+      // Optionally update UI here
+    })
+    .catch(error => {
+      console.error("Error saving post:", error.message);
+    });
+}
+
+
+
+
 
 // intial fetch declaration once the DOM is fully loaded
 // 
 document.addEventListener("DOMContentLoaded", () => {
+    let ex = document.getElementById('postForm').addEventListener('submit', addPost);
+    console.log(ex);
     //console.log(fetch('http://localhost:3000/posts'));
     fetch('http://localhost:3000/posts')
         .then(res => res.json())
@@ -23,7 +162,9 @@ document.addEventListener("DOMContentLoaded", () => {
             allPosts = posts;
             retrievePosts(posts);
             // default load
-            fetchOnePost(4);
+
+            const firstPost = allPosts[0];
+            fetchOnePost(firstPost.id);
         });
 });
 
@@ -44,7 +185,7 @@ function loadOutputDiv(post){
                 <div class="m-1"><img src="${post.image}" alt="" class="object-cover w-[400px]"></div>
                 <div class="p-1">
                     <span class="inline-block" style ="text-align:right;">
-                        <a onclick="openDialog()" class="cursor-pointer underline text-blue-900">edit</a>
+                        <a onclick="editPost(${post.id})" class="cursor-pointer underline text-blue-900">edit</a>
                         <a onclick="deletePost(${post.id})" class="ml-2 cursor-pointer text-red-800 underline">del</a>
                     </span>
                     <h2 class="m-1 block font-medium text-3xl">${post.post_title}</h2>
@@ -119,7 +260,7 @@ function createPostItem(post) {
                     <span class="inline-block"><span>${post.author}</span>
                         <span class="pl-2">${dateCreated}</span></span>
                     <span class="block">
-                        <a onclick="openDialog()" class="cursor-pointer underline text-blue-900">edit</a>
+                        <a onclick="editPost(${post.id})" class="cursor-pointer underline text-blue-900">edit</a>
                         <a onclick="deletePost(${post.id})" class="ml-2 cursor-pointer text-red-800 underline">del</a></span>
                 </div>
 
@@ -200,7 +341,7 @@ function deletePost(id) {
             // This deletes post in the DOM
 
             console.log("post id " + id);
-            let thePosts = allPosts.filter(post => post.id !== id);
+            let thePosts = allPosts.filter(post => post.id !== Number(id));
             // posts = posts.filter(post => post.id !== id);
             console.log("after remove post " + thePosts);
             retrievePosts(thePosts);
@@ -211,8 +352,12 @@ function deletePost(id) {
 }
 
 
+
+
 // make onclick functions global even on the html side
 window.deletePost = deletePost;
+window.addPost = addPost;
+window.editPost = editPost;
 window.formatToCustomDate = formatToCustomDate;
 window.fetchOnePost = fetchOnePost;
 window.openDialog = openDialog;
