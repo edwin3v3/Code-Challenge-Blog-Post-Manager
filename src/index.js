@@ -1,4 +1,5 @@
 console.log('before fetch');
+const baseUrl = "https://json-server2-v750.onrender.com/posts";
 
 // define global array to hold posts
 let allPosts = [];
@@ -92,7 +93,7 @@ function addPost(event) {
         // meaning we are dealing with an existing post in the form data.
         // therefore update
 
-        fetch(`http://localhost:3000/posts/${postId}`,{
+        fetch(`${baseUrl}/${postId}`,{
             method: 'PUT',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(postData)
@@ -123,7 +124,7 @@ function addPost(event) {
 }
 
 function savePost(newPost) {
-  fetch('http://localhost:3000/posts', {
+  fetch('${baseUrl}', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -154,8 +155,8 @@ function savePost(newPost) {
 document.addEventListener("DOMContentLoaded", () => {
     let ex = document.getElementById('postForm').addEventListener('submit', addPost);
     console.log(ex);
-    //console.log(fetch('http://localhost:3000/posts'));
-    fetch('http://localhost:3000/posts')
+    //console.log(fetch('${baseUrl}'));
+    fetch('${baseUrl}')
         .then(res => res.json())
         .then(posts => {
             // assigning of fetrched posts to global array
@@ -222,7 +223,7 @@ console.log('after fetch');
 function fetchOnePost(id) {
   const outPutDiv = document.getElementById('outPutDiv');
 
-  fetch(`http://localhost:3000/posts/${id}`, {
+  fetch(`${baseUrl}/${id}`, {
     method: 'GET'
   })
     .then(res => {
@@ -330,7 +331,7 @@ function deletePost(id) {
     console.log(typeof allPosts, allPosts);
     if (confirm("Are you sure you want to delete this post")) {
         // delete posts from json server
-        fetch(`http://localhost:3000/posts/${id}`, {
+        fetch(`${baseUrl}/${id}`, {
             method: 'DELETE'
         }).then(res => {
             if (!res.ok) {
