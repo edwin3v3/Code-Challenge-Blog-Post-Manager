@@ -1,5 +1,6 @@
 console.log('before fetch');
-const baseUrl = "https://json-server2-v750.onrender.com/posts";
+const baseUrl = "https://json-server2-v750.onrender.com";
+// "https://json-server2-v750.onrender.com/posts"
 
 // define global array to hold posts
 let allPosts = [];
@@ -93,7 +94,7 @@ function addPost(event) {
         // meaning we are dealing with an existing post in the form data.
         // therefore update
 
-        fetch(`${baseUrl}/${postId}`,{
+        fetch(`${baseUrl}/posts/${postId}`,{
             method: 'PUT',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(postData)
@@ -124,7 +125,7 @@ function addPost(event) {
 }
 
 function savePost(newPost) {
-  fetch('${baseUrl}', {
+  fetch(`${baseUrl}/posts`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -153,10 +154,11 @@ function savePost(newPost) {
 // intial fetch declaration once the DOM is fully loaded
 // 
 document.addEventListener("DOMContentLoaded", () => {
+    console.log("hello I am running");
     let ex = document.getElementById('postForm').addEventListener('submit', addPost);
     console.log(ex);
-    //console.log(fetch('${baseUrl}'));
-    fetch('${baseUrl}')
+    //console.log(fetch('${baseUrl}/posts'));
+    fetch(`${baseUrl}/posts`)
         .then(res => res.json())
         .then(posts => {
             // assigning of fetrched posts to global array
@@ -223,7 +225,7 @@ console.log('after fetch');
 function fetchOnePost(id) {
   const outPutDiv = document.getElementById('outPutDiv');
 
-  fetch(`${baseUrl}/${id}`, {
+  fetch(`${baseUrl}/posts/${id}`, {
     method: 'GET'
   })
     .then(res => {
@@ -331,7 +333,7 @@ function deletePost(id) {
     console.log(typeof allPosts, allPosts);
     if (confirm("Are you sure you want to delete this post")) {
         // delete posts from json server
-        fetch(`${baseUrl}/${id}`, {
+        fetch(`${baseUrl}/posts/${id}`, {
             method: 'DELETE'
         }).then(res => {
             if (!res.ok) {
